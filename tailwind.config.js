@@ -3,15 +3,18 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        sm: "480px"
-      }
-    },
-    colors: {
-      "faintBlue": "#AADCEC",
+        sm: "480px",
+      },
+      colors: {
+        faintBlue: "#AADCEC",
+      },
+      spacing: {
+        exl: "48rem",
+      },
     },
     fontFamily: {
-      nunito: ['Nunito', 'sans-serif']
-    }
+      nunito: ["Nunito", "sans-serif"],
+    },
   },
   plugins: [],
 };
