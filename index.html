@@ -18,11 +18,13 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body class="font-nunito h-full">
+  <body id="body" class="font-nunito h-full scroll-smooth dark">
     <!-- intro section -->
-    <div class="h-1/2 lg:h-screen bg-gradient-to-t from-faintBlue w-full">
+    <div
+      class="h-1/2 lg:h-screen bg-gradient-to-t from-faintBlue dark:from-slate-800 dark:to-slate-900 w-full"
+    >
       <!-- navbar -->
-      <nav class="fixed top-0 bg-white w-full z-20">
+      <nav class="fixed top-0 bg-white w-full z-20 dark:bg-slate-900">
         <div
           class="h-16 flex justify-between items-center container mx-auto px-5"
         >
@@ -36,18 +38,27 @@
 
           <div class="hidden md:block">
             <ul
-              class="flex space-x-10 text-gray-500 font-bold text-sm uppercase"
+              class="flex space-x-10 text-gray-500 dark:text-gray-100 font-bold text-sm uppercase"
             >
               <li class="hover:text-faintBlue"><a href="#">Home</a></li>
-              <li class="hover:text-faintBlue"><a href="#">About</a></li>
-              <li class="hover:text-faintBlue"><a href="#">Services</a></li>
-              <li class="hover:text-faintBlue"><a href="#">Projects</a></li>
-              <li class="hover:text-faintBlue"><a href="#">Contact</a></li>
+              <li class="hover:text-faintBlue"><a href="#about">About</a></li>
+              <li class="hover:text-faintBlue">
+                <a href="#services">Services</a>
+              </li>
+              <li class="hover:text-faintBlue">
+                <a href="#projects">Projects</a>
+              </li>
+              <li class="hover:text-faintBlue">
+                <a href="#contact">Contact</a>
+              </li>
             </ul>
           </div>
 
-          <div class="cursor-pointer hidden md:block text-faintBlue">
-            <i class="fa-solid fa-moon fa-bounce fa-lg"></i>
+          <div
+            id="toggler"
+            class="cursor-pointer hidden md:block text-faintBlue dark:text-orange-400"
+          >
+            <i id="togglerIcon" class="fa-solid fa-moon fa-bounce fa-lg"></i>
           </div>
 
           <div class="cursor-pointer md:hidden" onclick="toggleMobileMenu()">
@@ -66,11 +77,11 @@
             id="mobileMenu"
             class="hidden fixed top-0 left-0 bg-faintBlue w-full p-10 space-y-10 rounded-b-3xl text-white text-center"
           >
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a class="mLink" href="#">Home</a></li>
+            <li><a class="mLink" href="#about">About</a></li>
+            <li><a class="mLink" href="#services">Services</a></li>
+            <li><a class="mLink" href="#projects">Projects</a></li>
+            <li><a class="mLink" href="#contact">Contact</a></li>
 
             <div
               class="cursor-pointer md:hidden fixed top-0 right-8"
@@ -83,13 +94,13 @@
       </nav>
 
       <!-- intro content -->
-      <div class="relative h-full mt-16 overflow-hidden">
+      <div class="relative h-full mt-16 overflow-hidden z-0">
         <!-- text -->
         <div
           class="absolute top-2/4 sm:top-1/3 left-5 font-bold text-xl sm:left-10 sm:text-4xl md:left-40 md:text-6xl lg:left-10 xl:left-48 xl:text-7xl"
         >
-          <span class="text-gray-600">Front-end</span>
-          <p class="text-purple-600 developer"></p>
+          <span class="text-gray-200">Front-end</span>
+          <p class="text-purple-600 dark:text-faintBlue developer"></p>
         </div>
         <!-- image -->
         <img
@@ -98,56 +109,337 @@
           alt=""
         />
         <div
-          class="hidden lg:block bg-gradient-to-t from-purple-600 absolute -bottom-1/4 rounded-full w-exl h-exl left-1/2 -translate-x-1/2 z-0"
+          class="hidden lg:block bg-gradient-to-t from-purple-600 dark:from-faintBlue absolute -bottom-1/3 left-1/2 rounded-full w-exl h-exl -translate-x-1/2 -z-10"
         ></div>
         <!-- text container -->
       </div>
     </div>
 
-    <!-- about me section -->
-    <div class="flex container justify-center gap-20 items-center my-14">
-      <div class="relative">
-        <img
-          src="assets/dots.png"
-          class="absolute opacity-30 w-2/4 -top-1 -left-1 -z-10"
-          alt=""
-        />
-        <div class="bg-purple-600 rounded-full overflow-hidden z-10">
-          <img src="assets/man.png" class="w-48 h-64 pt-8" alt="" />
+    <div class="bg-white dark:bg-slate-900 py-40">
+      <!-- about me section -->
+      <div
+        id="about"
+        class="flex md:flex-row flex-col-reverse container mx-auto gap-16 justify-center items-center mb-40 px-10"
+      >
+        <div class="relative">
+          <img
+            src="assets/dots.png"
+            class="absolute opacity-30 w-2/4 -top-1 -left-1 -z-10"
+            alt=""
+          />
+          <div
+            class="bg-gradient-to-b from-purple-600 rounded-full overflow-hidden z-10"
+          >
+            <img src="assets/man.png" class="w-56 h-72 pt-8" alt="" />
+          </div>
+        </div>
+
+        <div>
+          <div class="space-y-1">
+            <h1 class="font-bold text-purple-600 text-sm">ABOUT ME</h1>
+            <h2 class="font-bold text-gray-600 text-2xl">Better Design</h2>
+            <h2 class="font-bold text-gray-600 text-2xl">Better Experience</h2>
+            <p class="text-gray-600 text-sm">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum natus
+              molestias adipisci quis, nesciunt illum?
+            </p>
+          </div>
+
+          <!-- skills -->
+          <div class="space-y-3 mt-2">
+            <div>
+              <p class="text-gray-600">HTML</p>
+              <div class="bg-gray-300 rounded-md">
+                <div class="w-4/5 h-1 bg-purple-400 rounded-md"></div>
+              </div>
+            </div>
+            <div>
+              <p class="text-gray-600">JavaScript</p>
+              <div class="bg-gray-300 rounded-md">
+                <div class="w-2/3 h-1 bg-purple-400 rounded-md"></div>
+              </div>
+            </div>
+            <div>
+              <p class="text-gray-600">React</p>
+              <div class="bg-gray-300 rounded-md">
+                <div class="w-5/6 h-1 bg-purple-400 rounded-md"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="w-2/5">
-        <div class="space-y-1">
-          <h1 class="font-bold text-purple-600 text-sm">ABOUT ME</h1>
-          <h2 class="font-medium">Better Design</h2>
-          <h2 class="font-medium">Better Experience</h2>
-          <p class="text-gray-600 text-xs">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum natus
-            molestias adipisci quis, nesciunt illum?
+      <!-- services -->
+      <div id="services" class="container mx-auto mb-40">
+        <!-- top -->
+        <div class="flex flex-col items-center gap-3">
+          <h1 class="font-bold text-purple-600">SERVICES</h1>
+          <h1 class="text-faintBlue text-3xl">What do we offer?</h1>
+          <p class="text-gray-400 w-3/4 sm:w-1/2 text-center">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus
+            voluptatibus dolorem necessitatibus voluptatum amet ipsa vero
+            delectus ullam, voluptate impedit.
           </p>
         </div>
 
-        <!-- skills -->
-        <div class="space-y-3 mt-2">
-          <div>
-            <p class="text-gray-600">HTML</p>
-            <div class="bg-gray-300">
-              <div class="w-4/5 h-1 bg-purple-600 rounded-md"></div>
-            </div>
+        <!-- bottom -->
+        <div class="flex flex-wrap gap-5 justify-center my-10 px-10 sm:p-0">
+          <!-- cards -->
+          <div
+            class="w-full md:w-2/5 lg:w-3/12 shadow-md dark:shadow-slate-800 px-5 py-5 flex flex-col gap-3 items-start rounded-md"
+          >
+            <i
+              class="fa-brands fa-figma fa-lg p-4 bg-purple-600 rounded-full"
+              style="color: white"
+            ></i>
+            <h1 class="font-bold dark:text-gray-300">UI / UX Design</h1>
+            <p class="text-gray-400">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Delectus, enim!
+            </p>
+            <button class="text-purple-600">read more</button>
           </div>
-          <div>
-            <p class="text-gray-600">JavaScript</p>
-            <div class="bg-gray-300">
-              <div class="w-2/3 h-1 bg-purple-600 rounded-md"></div>
-            </div>
+
+          <div
+            class="w-full md:w-2/5 lg:w-3/12 shadow-md dark:shadow-slate-800 px-5 py-5 flex flex-col gap-3 items-start rounded-md"
+          >
+            <i
+              class="fa-brands fa-react fa-lg p-4 bg-purple-600 rounded-full"
+              style="color: white"
+            ></i>
+            <h1 class="font-bold dark:text-gray-300">UI / UX Design</h1>
+            <p class="text-gray-400">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Delectus, enim!
+            </p>
+            <button class="text-purple-600">read more</button>
           </div>
-          <div>
-            <p class="text-gray-600">React</p>
-            <div class="bg-gray-300">
-              <div class="w-3/5 h-1 bg-purple-600 rounded-md"></div>
-            </div>
+
+          <div
+            class="w-full md:w-2/5 lg:w-3/12 shadow-md dark:shadow-slate-800 px-5 py-5 flex flex-col gap-3 items-start rounded-md"
+          >
+            <i
+              class="fa-brands fa-node fa-lg p-4 bg-purple-600 rounded-full"
+              style="color: white"
+            ></i>
+            <h1 class="font-bold dark:text-gray-300">UI / UX Design</h1>
+            <p class="text-gray-400">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Delectus, enim!
+            </p>
+            <button class="text-purple-600">read more</button>
           </div>
+
+          <div
+            class="w-full md:w-2/5 lg:w-3/12 shadow-md dark:shadow-slate-800 px-5 py-5 flex flex-col gap-3 items-start rounded-md"
+          >
+            <i
+              class="fa-brands fa-vuejs fa-lg p-4 bg-purple-600 rounded-full"
+              style="color: white"
+            ></i>
+            <h1 class="font-bold dark:text-gray-300">UI / UX Design</h1>
+            <p class="text-gray-400">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Delectus, enim!
+            </p>
+            <button class="text-purple-600">read more</button>
+          </div>
+
+          <div
+            class="w-full md:w-2/5 lg:w-3/12 shadow-md dark:shadow-slate-800 px-5 py-5 flex flex-col gap-3 items-start rounded-md"
+          >
+            <i
+              class="fa-brands fa-github fa-lg p-4 bg-purple-600 rounded-full"
+              style="color: white"
+            ></i>
+            <h1 class="font-bold dark:text-gray-300">UI / UX Design</h1>
+            <p class="text-gray-400">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Delectus, enim!
+            </p>
+            <button class="text-purple-600">read more</button>
+          </div>
+
+          <div
+            class="w-full md:w-2/5 lg:w-3/12 shadow-md dark:shadow-slate-800 px-5 py-5 flex flex-col gap-3 items-start rounded-md"
+          >
+            <i
+              class="fa-brands fa-figma fa-lg p-4 bg-purple-600 rounded-full"
+              style="color: white"
+            ></i>
+            <h1 class="font-bold dark:text-gray-300">UI / UX Design</h1>
+            <p class="text-gray-400">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              Delectus, enim!
+            </p>
+            <button class="text-purple-600">read more</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Works and projects -->
+      <div id="projects" class="container mx-auto my-40">
+        <!-- top -->
+        <div class="flex flex-col items-center gap-3">
+          <h1 class="font-bold text-purple-600 text-3xl">
+            Works and
+            <span
+              class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-faintBlue relative inline-block"
+              ><span class="relative text-white">Projects</span></span
+            >
+          </h1>
+          <p class="text-gray-400 w-3/4 sm:w-1/2 text-center">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus
+            voluptatibus dolorem necessitatibus voluptatum amet ipsa vero
+            delectus ullam, voluptate impedit.
+          </p>
+        </div>
+
+        <!-- bottom -->
+        <div class="flex flex-wrap gap-5 justify-center my-10 px-10 sm:p-0">
+          <!-- cards -->
+          <div
+            class="w-full md:w-2/5 lg:w-1/5 shadow-md rounded-md overflow-hidden cursor-pointer"
+          >
+            <img
+              src="https://www.thewechatagency.com/wp-content/uploads/2021/12/1_SwFB1o_k1LGprN-XRUZQ8w-660x407.jpeg"
+              alt="project image"
+            />
+          </div>
+          <div
+            class="w-full md:w-2/5 lg:w-1/5 shadow-md rounded-md overflow-hidden cursor-pointer"
+          >
+            <img
+              src="https://www.thewechatagency.com/wp-content/uploads/2021/12/1_SwFB1o_k1LGprN-XRUZQ8w-660x407.jpeg"
+              alt="project image"
+            />
+          </div>
+          <div
+            class="w-full md:w-2/5 lg:w-1/5 shadow-md rounded-md overflow-hidden cursor-pointer"
+          >
+            <img
+              src="https://www.thewechatagency.com/wp-content/uploads/2021/12/1_SwFB1o_k1LGprN-XRUZQ8w-660x407.jpeg"
+              alt="project image"
+            />
+          </div>
+          <div
+            class="w-full md:w-2/5 lg:w-1/5 shadow-md rounded-md overflow-hidden cursor-pointer"
+          >
+            <img
+              src="https://www.thewechatagency.com/wp-content/uploads/2021/12/1_SwFB1o_k1LGprN-XRUZQ8w-660x407.jpeg"
+              alt="project image"
+            />
+          </div>
+          <div
+            class="w-full md:w-2/5 lg:w-1/5 shadow-md rounded-md overflow-hidden cursor-pointer"
+          >
+            <img
+              src="https://www.thewechatagency.com/wp-content/uploads/2021/12/1_SwFB1o_k1LGprN-XRUZQ8w-660x407.jpeg"
+              alt="project image"
+            />
+          </div>
+          <div
+            class="w-full md:w-2/5 lg:w-1/5 shadow-md rounded-md overflow-hidden cursor-pointer"
+          >
+            <img
+              src="https://www.thewechatagency.com/wp-content/uploads/2021/12/1_SwFB1o_k1LGprN-XRUZQ8w-660x407.jpeg"
+              alt="project image"
+            />
+          </div>
+          <div
+            class="w-full md:w-2/5 lg:w-1/5 shadow-md rounded-md overflow-hidden cursor-pointer"
+          >
+            <img
+              src="https://www.thewechatagency.com/wp-content/uploads/2021/12/1_SwFB1o_k1LGprN-XRUZQ8w-660x407.jpeg"
+              alt="project image"
+            />
+          </div>
+          <div
+            class="w-full md:w-2/5 lg:w-1/5 shadow-md rounded-md overflow-hidden cursor-pointer"
+          >
+            <img
+              src="https://www.thewechatagency.com/wp-content/uploads/2021/12/1_SwFB1o_k1LGprN-XRUZQ8w-660x407.jpeg"
+              alt="project image"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- contact -->
+      <div id="contact" class="container mx-auto">
+        <!-- top -->
+        <div class="flex flex-col items-center gap-3">
+          <h1 class="font-bold text-purple-600">CONTACT</h1>
+          <h1 class="text-faintBlue text-3xl">Have a question?</h1>
+          <p class="text-gray-400 w-3/4 sm:w-1/2 text-center">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          </p>
+        </div>
+
+        <!-- bottom -->
+        <form class="flex flex-col items-center gap-5 my-10 p-8">
+          <input
+            type="text"
+            class="p-2 w-full md:w-1/2 ring-1 ring-faintBlue rounded-sm dark:bg-slate-800 dark:ring-0 dark:text-gray-300"
+            placeholder="First name"
+          />
+          <input
+            type="text"
+            class="p-2 w-full md:w-1/2 ring-1 ring-faintBlue rounded-sm dark:bg-slate-800 dark:ring-0 dark:text-gray-300"
+            placeholder="Last name"
+          />
+          <textarea
+            name="message"
+            cols="30"
+            rows="10"
+            placeholder="message"
+            class="ring-1 ring-faintBlue w-full md:w-1/2 p-2 rounded-sm dark:bg-slate-800 dark:ring-0 dark:text-gray-300"
+          ></textarea>
+          <button
+            type="submit"
+            class="text-white bg-purple-600 w-full md:w-1/2 py-3 rounded-md"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <div>
+      <div class="bg-gray-800 w-full z-20">
+        <div
+          class="h-16 flex justify-between items-center container mx-auto px-5"
+        >
+          <div class="h-full">
+            <img
+              src="./assets/logo-name.png"
+              class="w-16 h-14 cursor-pointer"
+              alt=""
+            />
+          </div>
+
+          <div class="hidden md:block">
+            <p class="text-faintBlue">
+              &copy; 2022. Designed by Libamlak Birhanu
+            </p>
+          </div>
+
+          <!-- mobile menu -->
+          <ul id="mobileMenu" class="flex gap-5 text-faintBlue">
+            <li>
+              <a
+                target="_blank"
+                href="https://linkedin.com/in/libamlak-birhanu-095089209"
+                ><i class="fa-brands fa-linkedin fa-lg"></i
+              ></a>
+            </li>
+            <li>
+              <a target="_blank" href="https://github.com/libamlakbirhanu"
+                ><i class="fa-brands fa-github fa-lg"></i
+              ></a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
